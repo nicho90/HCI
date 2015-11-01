@@ -12,7 +12,7 @@ var nasatlxSchema = mongoose.Schema({
     temporalDemand: Number,
     performance: Number,
     effort: Number,
-    frustration: Numer
+    frustration: Nubmer
 });
 
 // create the model for measurements and expose it to our app
