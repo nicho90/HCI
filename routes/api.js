@@ -10,6 +10,7 @@ mongoose.connect(dbConnections.MongoDB);
 var diaries = require('./functions/APIDiaries')();
 var nasatlx = require('./functions/APInasatlx')();
 var umux = require('./functions/APIumux')();
+var survey = require('./functions/APIsurvey')();
 
 router.post('/diaries', function(req, res, next) {
   if (req.body.userId != undefined && req.body.device != undefined && req.body.reason != undefined ) {
@@ -54,6 +55,16 @@ router.post('/umux', function(req, res, next) {
 });
 router.get('/umux', function(req,res,next) {
   umux.getEntries(function(result){
+    res.send(result)
+  })
+});
+router.post('/survey', function(req, res, next) {
+  survey.createEntry(function(result){
+    res.send(result)
+  },req.body);
+});
+router.get('/survey', function(req,res,next) {
+  survey.getEntries(function(result){
     res.send(result)
   })
 });
