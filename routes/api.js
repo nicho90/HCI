@@ -9,6 +9,7 @@ console.log(dbConnections);
 mongoose.connect(dbConnections.MongoDB);
 var diaries = require('./functions/APIDiaries')();
 var nasatlx = require('./functions/APInasatlx')();
+var umux = require('./functions/APIumux')();
 
 router.post('/diaries', function(req, res, next) {
   if (req.body.userId != undefined && req.body.device != undefined && req.body.reason != undefined ) {
@@ -43,6 +44,16 @@ router.post('/nasatlx', function(req, res, next) {
 });
 router.get('/nasatlx', function(req,res,next) {
   nasatlx.getEntries(function(result){
+    res.send(result)
+  })
+});
+router.post('/umux', function(req, res, next) {
+  umux.createEntry(function(result){
+    res.send(result)
+  },req.body);
+});
+router.get('/umux', function(req,res,next) {
+  umux.getEntries(function(result){
     res.send(result)
   })
 });

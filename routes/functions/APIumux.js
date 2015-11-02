@@ -1,21 +1,20 @@
 /**
- * Created by Andre on 01.11.2015.
+ * Created by Andre on 02.11.2015.
  */
-var NASATLX = require('../../config/models/nasatlx');
+var UMUX = require('../../config/models/umux');
 
-function Nasatlx() {
+function Umux() {
     this.createEntry = function(callback, input) {
-        var entry = new NASATLX({
-            userId: input.userId,
-            mentalDemand: input.mentalDemand,
-            physicalDemand: input.physicalDemand,
-            temporalDemand: input.temporalDemand,
-            performance: input.performance,
-            effort: input.effort,
-            frustration: input.frustration
+        var entry = new UMUX({
+            userId: input.userId
         });
         if (input.date != undefined) {
             entry.date = input.date;
+        }
+        for (var attribute in input) {
+            if (attribute != 'userId' && attribute != 'data') {
+                entry[attribute] = input[attribute];
+            }
         }
         entry.save(function(err) {
             if(err) {
@@ -29,7 +28,7 @@ function Nasatlx() {
     };
 
     this.getEntries = function(callback){
-        NASATLX.find({},function(err, result){
+        UMUX.find({},function(err, result){
             if (err) {
                 callback({success: false, message: 'error in finding document'})
             }
@@ -41,5 +40,5 @@ function Nasatlx() {
 
 }
 module.exports = function() {
-    return new Nasatlx();
+    return new Umux();
 };
