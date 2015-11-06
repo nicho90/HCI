@@ -16,3 +16,8 @@ body {
     padding: 40px 15px;
     text-align: center;
 }
+
+.middle td{
+    text-align: center;
+    width: 20%;
+}

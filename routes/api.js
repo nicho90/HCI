@@ -74,4 +74,8 @@ router.get('/userId', function(req,res,next) {
     res.send(result)
   })
 });
+router.post('/test', function(req,res,next) {
+  console.log(req);
+  res.redirect('/');
+});
 module.exports = router;

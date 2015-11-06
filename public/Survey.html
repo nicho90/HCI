@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!--<link rel="icon" href="images/favicon/favicon.ico"> -->
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="x-rim-auto-match" content="none">
+
+
+    <title>HCI-Research Methods</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+    <!-- Font awesome CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"/>
+
+    <!-- Custom styles for this template -->
+    <link href="css/styles.css" rel="stylesheet"/>
+</head>
+
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">HCI-Research methods</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+
+            <!--NAVBAR LEFT -->
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a href="survey.html"><span class="glyphicon glyphicon-edit"></span>&nbsp;&nbsp;Survey</a>
+                </li>
+                <li>
+                    <a href="umux.html"><span class="glyphicon glyphicon-edit"></span>&nbsp;&nbsp;UMUX</a>
+                </li>
+                <li>
+                    <a href="sus.html"><span class="glyphicon glyphicon-edit"></span>&nbsp;&nbsp;SUS</a>
+                </li>
+                <li>
+                    <a href="nasatlx.html"><span class="glyphicon glyphicon-edit"></span>&nbsp;&nbsp;NASA-TLX</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <h1>Survey</h1>
+    <form action="api/test" method="POST">
+        <div class="verticalLine">
+        <b>How satisfied are you with your topic to present?</b><br><br>
+        <table>
+            <tr class="middle">
+                <th>Totally</th>
+                <th>&nbsp;</th>
+                <th>&nbsp;</th>
+                <th>&nbsp;</th>
+                <th>Totally not</th>
+            </tr>
+            <tr class="middle">
+                <td><input type="radio" name="question1" id="sd1" value="1"></td>
+                <td><input type="radio" name="question1" id="d1" value="2"></td>
+                <td><input type="radio" name="question1" id="n1" value="3"></td>
+                <td><input type="radio" name="question1" id="a1" value="4"></td>
+                <td><input type="radio" name="question1" id="sa1" value="5"></td>
+            </tr>
+        </table><hr><br>
+
+        </div>
+        <b>Have you already startet to work on your presentation?</b><br><br>
+        <table>
+            <tr class="middle">
+                <th>Totally</th>
+                <th>&nbsp;</th>
+                <th>&nbsp;</th>
+                <th>&nbsp;</th>
+                <th>Totally not</th>
+            </tr>
+            <tr class="middle">
+                <td><input type="radio" name="question2" id="sd2" value="1"></td>
+                <td><input type="radio" name="question2" id="d2" value="2"></td>
+                <td><input type="radio" name="question2" id="n2" value="3"></td>
+                <td><input type="radio" name="question2" id="a2" value="4"></td>
+                <td><input type="radio" name="question2" id="sa2" value="5"></td>
+            </tr>
+        </table><hr><br>
+        <b>Have you already startet to work on your presentation?</b><br><br>
+        <table>
+            <tr class="middle">
+                <th>Yes</th>
+                <th>&nbsp;</th>
+                <th>&nbsp;</th>
+                <th>&nbsp;</th>
+                <th>No</th>
+            </tr>
+            <tr class="middle">
+                <td><input type="radio" name="question3" id="sd3" value="1"></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td><input type="radio" name="question3" id="sa3" value="5"></td>
+            </tr>
+        </table><hr><br>
+        <b>Are you already done with it?</b><br><br>
+        <table>
+            <tr class="middle">
+                <th>Yes</th>
+                <th>&nbsp;</th>
+                <th>&nbsp;</th>
+                <th>&nbsp;</th>
+                <th>No</th>
+            </tr>
+            <tr class="middle">
+                <td><input type="radio" name="question4" id="sd4" value="1"></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td><input type="radio" name="question4" id="sa4" value="5"></td>
+            </tr>
+        </table><hr><br>
+        <b>How well do you think you are prepared for your presentation?</b><br><br>
+        <table>
+            <tr class="middle">
+                <th>Well prepared</th>
+                <th>&nbsp;</th>
+                <th>&nbsp;</th>
+                <th>&nbsp;</th>
+                <th>Not prepared</th>
+            </tr>
+            <tr class="middle">
+                <td><input type="radio" name="question5" id="sd5" value="1"></td>
+                <td><input type="radio" name="question5" id="d5" value="2"></td>
+                <td><input type="radio" name="question5" id="n5" value="3"></td>
+                <td><input type="radio" name="question5" id="a5" value="4"></td>
+                <td><input type="radio" name="question5" id="sa5" value="5"></td>
+            </tr>
+        </table><hr><br>
+        <b>Are you aware that you can borrow a presenter in the zdm?</b><br><br>
+        <table>
+            <tr class="middle">
+                <th>Yes</th>
+                <th>&nbsp;</th>
+                <th>&nbsp;</th>
+                <th>&nbsp;</th>
+                <th>No</th>
+            </tr>
+            <tr class="middle">
+                <td><input type="radio" name="question6" id="sd6" value="1"></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td><input type="radio" name="question6" id="sa6" value="5"></td>
+            </tr>
+        </table><hr><br>
+        <b>Are you aware that you can borrow a hdmi cable in the zdm?</b><br><br>
+        <table>
+            <tr class="middle">
+                <th>Yes</th>
+                <th>&nbsp;</th>
+                <th>&nbsp;</th>
+                <th>&nbsp;</th>
+                <th>No</th>
+            </tr>
+            <tr class="middle">
+                <td><input type="radio" name="question7" id="sd7" value="1"></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td><input type="radio" name="question7" id="sa7" value="5"></td>
+            </tr>
+        </table><hr><br>
+        <b>How old are you?</b><br><br>
+
+        <select name="age" id="age">
+            <option value="" selected="selected">(Select Your Age)</option>
+            <option value="016">16</option>
+            <option value="017">17</option>
+            <option value="018">18</option>
+            <option value="019">19</option>
+            <option value="020">20</option>
+            <option value="021">21</option>
+            <option value="022">22</option>
+            <option value="023">23</option>
+            <option value="024">24</option>
+            <option value="025">25</option>
+            <option value="026">26</option>
+            <option value="027">27</option>
+            <option value="028">28</option>
+            <option value="029">29</option>
+            <option value="030">30</option>
+            <option value="031">31</option>
+            <option value="032">32</option>
+            <option value="033">33</option>
+            <option value="034">34</option>
+            <option value="035">35</option>
+            <option value="036">36</option>
+            <option value="037">37</option>
+            <option value="038">38</option>
+            <option value="039">39</option>
+            <option value="040">40</option>
+            <option value="041">41</option>
+            <option value="042">42</option>
+            <option value="043">43</option>
+            <option value="044">44</option>
+            <option value="045">45</option>
+            <option value="046">46</option>
+            <option value="047">47</option>
+            <option value="048">48</option>
+            <option value="049">49</option>
+        </select><hr><br>
+        <b>Sex</b><br><br>
+        <select name="sex" id="sex">
+            <option value="" selected="selected">(Select Your Sex)</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select><hr><br>
+        <b>Are you in the Master or Bachelor program?</b><br><br>
+        <select name="studyProgram" id="studyProgram">
+            <option value="" selected="selected">(Select Your Studyprogram)</option>
+            <option value="Bachelor">Bachelor</option>
+            <option value="Master">Master</option>
+            <option value="Other">Other</option>
+        </select><hr><br>
+        <b>Which semester?</b><br><br>
+        <select name="semester" id="semester">
+            <option value="" selected="selected">(Select Your Semester)</option>
+            <option value="001">1</option>
+            <option value="002">2</option>
+            <option value="003">3</option>
+            <option value="004">4</option>
+            <option value="005">5</option>
+            <option value="006">6</option>
+            <option value="007">7</option>
+            <option value="008">8</option>
+            <option value="009">9</option>
+            <option value="010">10</option>
+            <option value="011">11</option>
+            <option value="012">12</option>
+            <option value="013">13</option>
+            <option value="014">14</option>
+            <option value="015">15</option>
+            <option value="016">16</option>
+            <option value="017">17</option>
+            <option value="018">18</option>
+            <option value="019">19</option>
+            <option value="020">20</option>
+            <option value="021">21</option>
+            <option value="022">22</option>
+            <option value="023">23</option>
+            <option value="024">24</option>
+            <option value="025">25</option>
+            <option value="026">26</option>
+            <option value="027">27</option>
+            <option value="028">28</option>
+            <option value="029">29</option>
+            <option value="030">30</option>
+            <option value="031">31</option>
+            <option value="032">32</option>
+            <option value="033">33</option>
+            <option value="034">34</option>
+            </select><hr><br>
+        <input id="userid" value="anonymous" type="hidden">
+        <input type="submit" value="Submit">
+    </form>
+</div>
+<br>
+<br>
+<!-- Bootstrap -->
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+<script src="//cdn.rawgit.com/js-cookie/js-cookie/master/src/js.cookie.js"></script>
+<script src="js/setcookie.js"></script>
+</body>
+</html>
