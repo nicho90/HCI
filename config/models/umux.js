@@ -10,8 +10,7 @@ var umuxSchema = mongoose.Schema({
     question_1: Number,
     question_2: Number,
     question_3: Number,
-    question_4: Number,
-    question_5: Number
+    question_4: Number
 });
 
 // create the model for measurements and expose it to our app

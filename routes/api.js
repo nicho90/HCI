@@ -63,15 +63,19 @@ router.get('/nasatlx', function(req,res,next) {
 
 // UMUX
 router.post('/umux', function(req, res, next) {
-    umux.createEntry(function(result){
-        res.send(result);
-    },req.body);
-});
+    var userId = req.cookies.uniqid;
+    req.body.userId = userId;
+    if (req.body.question_1 != undefined &&
+        req.body.question_2 != undefined &&
+        req.body.question_3 != undefined &&
+        req.body.question_4 != undefined ) {
 
-router.get('/umux', function(req,res,next) {
-    umux.getEntries(function(result){
-      res.send(result);
-    });
+        umux.createEntry(function(result){
+            res.redirect('/results-umux.html');
+        },req.body);
+    } else {
+        res.send({success: false, message: 'missing or false input'});
+    }
 });
 
 
@@ -91,7 +95,6 @@ router.post('/sus', function(req, res, next) {
         req.body.question_10 != undefined ) {
 
         sus.createEntry(function(result){
-            console.log(result);
             res.redirect('/results-sus.html');
         },req.body);
     } else {
