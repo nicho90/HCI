@@ -16,14 +16,14 @@ router.get('/diaries', function(req,res,next) {
         res.send(result)
     })
 });
-<<<<<<< HEAD
+
 
 // NASA-TLX
 router.get('/nasatlx', function(req,res,next) {
     nasatlx.getEntries(function(result){
         res.send(result)
     })
-=======
+
 router.get('/nasatlx/:id', function(req,res,next) {
     var userId = req.cookies.uniqid;
     console.log('hello')
@@ -41,7 +41,6 @@ router.get('/nasatlx/:id', function(req,res,next) {
             res.send(result)
         }, req.params.id)
     }
->>>>>>> origin/master
 });
 
 // UMUX
