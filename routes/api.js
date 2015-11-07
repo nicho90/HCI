@@ -36,16 +36,18 @@ router.get('/diaries', function(req,res,next) {
 
 // NASA-TLX
 router.post('/nasatlx', function(req, res, next) {
-  if (req.body.userId != undefined &&
-      req.body.mentalDemand != undefined &&
-      req.body.temporalDemand != undefined &&
-      req.body.performance != undefined &&
-      req.body.effort != undefined &&
-      req.body.frustration != undefined &&
-      req.body.physicalDemand != undefined ) {
+  var userId = req.cookies.uniqid;
+  req.query.userId = userId;
+  if (req.query.mentalDemand != undefined &&
+      req.query.temporalDemand != undefined &&
+      req.query.performance != undefined &&
+      req.query.effort != undefined &&
+      req.query.frustration != undefined &&
+      req.query.physicalDemand != undefined ) {
     nasatlx.createEntry(function(result){
-      res.send(result)
-    },req.body)
+      console.log(result)
+      res.send(result);
+    },req.query)
   }
   else {
     res.send({success: false, message: 'missing or false input'})

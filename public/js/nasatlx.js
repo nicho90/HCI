@@ -60,10 +60,8 @@ pair[14]  = "5 0";
 // Variable where the results end up
 var results_rating = new Array();
 var results_tally  = new Array();
-var results_weight = new Array();
-var results_overall;
 
-var pair_num = 0;
+
 for (var i = 0; i < NUM_SCALES; i++)
     results_tally[i] = 0;
 
@@ -98,64 +96,16 @@ function scaleClick(index, val)
     document.getElementById(top).bgColor='#AAAAAA';
     document.getElementById(bottom).bgColor='#AAAAAA';
 }
-
-// Return the HTML that produces the table for a given scale
-function getScaleHTML(index)
-{
-    var result = "";
-
-    // Outer table with a column for scale, column for definition
-    result += '<table><tr><td>';
-
-    // Table that generates the scale
-    result += '<table class="scale">';
-
-    // Row 1, just the name of the scale
-    result += '<tr><td colspan="20" class="heading">' + scale[index] + '</td></tr>';
-
-    // Row 2, the top half of the scale increments, 20 total columns
-    result += '<tr>';
-    var num = 1;
-    for (var i = 5; i <= 100; i += 5)
-    {
-        result += '<td id="t_' + index + '_' + i + '"   class="top' + num + '" onMouseUp="scaleClick(' + index + ', ' + i + ');"></td>';
-        num++;
-        if (num > 2)
-            num = 1;
-    }
-    result += '</tr>';
-
-    // Row 3, bottom half of the scale increments
-    result += '<tr>';
-    for (var i = 5; i <= 100; i += 5)
-    {
-        result += '<td id="b_' + index + '_' + i + '"   class="bottom" onMouseUp="scaleClick(' + index + ', ' + i + ');"></td>';
-    }
-    result += '</tr>';
-
-    // Row 4, left and right of range labels
-    result += '<tr>';
-    result += '<td colspan="10" class="left">' + left[index] + '</td><td colspan="10" class="right">' + right[index] + '</td>';
-    result += '</tr></table></td>';
-
-
-    // Now for the definition of the scale
-    result += '<td class="def">';
-    result += def[index];
-    result += '</td></tr></table>';
-
-    return result;
+function createURL(valueArray) {
+    var urlString = ''
+    urlString += '?mentalDemand=' + valueArray[0];
+    urlString += '&physicalDemand=' + valueArray[1];
+    urlString += '&temporalDemand=' + valueArray[2];
+    urlString += '&performance=' + valueArray[3];
+    urlString += '&effort=' + valueArray[4];
+    urlString += '&frustration=' +valueArray[5];
+    return urlString
 }
-
-function onLoad()
-{
-    // Get all the scales ready
-    for (var i = 0; i < NUM_SCALES; i++)
-    {
-        document.getElementById("scale" + i).innerHTML = getScaleHTML(i);
-    }
-}
-
 // Users want to proceed after doing the scales
 function buttonPart1()
 {
@@ -168,134 +118,15 @@ function buttonPart1()
             return false;
         }
     }
-
-    // Bye bye part 1, hello part 2
-    document.getElementById('div_part1').style.display = 'none';
-    //document.getElementById('div_part2').style.display = '';
-
-    document.getElementById('div_part4').style.display = '';
-    calcResults();
-    document.getElementById('div_part4').innerHTML = getResultsHTML();
-
+    var urlString = createURL(results_rating);
+    executeRequest(urlString, function() {
+        location.href='result/nasatlx/myResult';
+    })
     return true;
 }
-
-// User done reading the part 2 instructions
-function buttonPart2()
-{
-    // Bye bye part 2, hello part 3
-    document.getElementById('div_part2').style.display = 'none';
-    document.getElementById('div_part3').style.display = '';
-
-    // Set the labels for the buttons
-    setPairLabels();
-    return true;
-}
-
-// Set the button labels for the pairwise comparison stage
-function setPairLabels()
-{
-    var indexes = new Array();
-    indexes = pair[pair_num].split(" ");
-
-    var pair1 = scale[indexes[0]];
-    var pair2 = scale[indexes[1]];
-
-    document.getElementById('pair1').value = pair1;
-    document.getElementById('pair2').value = pair2;
-
-    document.getElementById('pair1_def').innerHTML = def[indexes[0]];
-    document.getElementById('pair2_def').innerHTML = def[indexes[1]];
-}
-
-// They clicked the top pair button
-function buttonPair1()
-{
-    var indexes = new Array();
-    indexes = pair[pair_num].split(" ");
-    results_tally[indexes[0]]++;
-
-    nextPair();
-    return true;
-}
-
-// They clicked the bottom pair button
-function buttonPair2()
-{
-    var indexes = new Array();
-    indexes = pair[pair_num].split(" ");
-    results_tally[indexes[1]]++;
-    nextPair();
-    return true;
-}
-
-// Compute the weights and the final score
-function calcResults()
-{
-    results_overall = 0.0;
-
-    for (var i = 0; i < NUM_SCALES; i++)
-    {
-        //results_weight[i] = results_tally[i] / 15.0;
-        //results_overall += results_weight[i] * results_rating[i];
-        results_overall += results_rating[i];
-    }
-    results_overall /= 6;
-}
-
-// Output the table of results
-function getResultsHTML()
-{
-    var result = "";
-
-    //result += "<table><tr><td></td><td>Rating</td><td>Tally</td><td>Weight</td></tr>";
-    result += "<table><tr><td></td><td>Rating</td></tr>";
-    for (var i = 0; i < NUM_SCALES; i++)
-    {
-        result += "<tr>";
-
-        result += "<td>";
-        result += scale[i];
-        result += "</td>";
-
-        result += "<td>";
-        result += results_rating[i];
-        result += "</td>";
-        /*
-         result += "<td>";
-         result += "0"//results_tally[i];
-         result += "</td>";
-
-         result += "<td>";
-         result += " 0.1666667"//results_weight[i];
-         result += "</td>";
-         */
-
-        result += "</tr>";
-    }
-
-    result += "</table>";
-    result += "<br/>";
-    result += "Overall = ";
-    result += results_overall;
-    result += "<br/>";
-
-    return result;
-}
-
-// Move to the next pair
-function nextPair()
-{
-    pair_num++;
-    if (pair_num >= 15)
-    {
-        document.getElementById('div_part3').style.display = 'none';
-        document.getElementById('div_part4').style.display = '';
-        calcResults();
-        document.getElementById('div_part4').innerHTML = getResultsHTML();
-    }
-    else
-    {
-        setPairLabels();
-    }
+function executeRequest(urlString, callback) {
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("POST", "/api/nasatlx"+urlString, false);
+    xhttp.send();
+    callback();
 }
