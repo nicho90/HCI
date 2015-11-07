@@ -60,8 +60,15 @@
 <div class="container">
     <h1>Survey</h1>
     <form action="api/survey" method="POST">
+<<<<<<< Updated upstream
         <div class="verticalLine">
         <b>How satisfied are you with your topic to present?</b><br><br>
+=======
+        <br>
+        <b>How satisfied are you with your topic to present?</b>
+        <br>
+        <br>
+>>>>>>> Stashed changes
         <table>
             <tr class="middle">
                 <th>Totally</th>
@@ -77,10 +84,12 @@
                 <td><input type="radio" name="question_1" id="a1" value="4"></td>
                 <td><input type="radio" name="question_1" id="sa1" value="5"></td>
             </tr>
-        </table><hr><br>
-
-        </div>
-        <b>Have you already startet to work on your presentation?</b><br><br>
+        </table>
+        <hr>
+        <br>
+        <b>Have you already startet to work on your presentation?</b>
+        <br>
+        <br>
         <table>
             <tr class="middle">
                 <th>Totally</th>
@@ -96,8 +105,12 @@
                 <td><input type="radio" name="question_2" id="a2" value="4"></td>
                 <td><input type="radio" name="question_2" id="sa2" value="5"></td>
             </tr>
-        </table><hr><br>
-        <b>Have you already startet to work on your presentation?</b><br><br>
+        </table>
+        <hr>
+        <br>
+        <b>Have you already startet to work on your presentation?</b>
+        <br>
+        <br>
         <table>
             <tr class="middle">
                 <th>Yes</th>
@@ -113,8 +126,12 @@
                 <td>&nbsp;</td>
                 <td><input type="radio" name="question_3" id="sa3" value="5"></td>
             </tr>
-        </table><hr><br>
-        <b>Are you already done with it?</b><br><br>
+        </table>
+        <hr>
+        <br>
+        <b>Are you already done with it?</b>
+        <br>
+        <br>
         <table>
             <tr class="middle">
                 <th>Yes</th>
@@ -130,8 +147,12 @@
                 <td>&nbsp;</td>
                 <td><input type="radio" name="question_4" id="sa4" value="5"></td>
             </tr>
-        </table><hr><br>
-        <b>How well do you think you are prepared for your presentation?</b><br><br>
+        </table>
+        <hr>
+        <br>
+        <b>How well do you think you are prepared for your presentation?</b>
+        <br>
+        <br>
         <table>
             <tr class="middle">
                 <th>Well prepared</th>
@@ -147,8 +168,12 @@
                 <td><input type="radio" name="question_5" id="a5" value="4"></td>
                 <td><input type="radio" name="question_5" id="sa5" value="5"></td>
             </tr>
-        </table><hr><br>
-        <b>Are you aware that you can borrow a presenter in the zdm?</b><br><br>
+        </table>
+        <hr>
+        <br>
+        <b>Are you aware that you can borrow a presenter in the ZDM ("Zentrum für Digitale Medien")?</b>
+        <br>
+        <br>
         <table>
             <tr class="middle">
                 <th>Yes</th>
@@ -164,8 +189,12 @@
                 <td>&nbsp;</td>
                 <td><input type="radio" name="question_6" id="sa6" value="5"></td>
             </tr>
-        </table><hr><br>
-        <b>Are you aware that you can borrow a hdmi cable in the zdm?</b><br><br>
+        </table>
+        <hr>
+        <br>
+        <b>Are you aware that you can borrow a HDMI-cable in the ZDM ("Zentrum für Digitale Medien")?</b>
+        <br>
+        <br>
         <table>
             <tr class="middle">
                 <th>Yes</th>
@@ -181,11 +210,18 @@
                 <td>&nbsp;</td>
                 <td><input type="radio" name="question_7" id="sa7" value="5"></td>
             </tr>
-        </table><hr><br>
-        <b>How old are you?</b><br><br>
-
+        </table>
+        <hr>
+        <br>
+        <b>How old are you?</b>
+        <br>
+        <br>
         <select name="age" id="age">
+<<<<<<< Updated upstream
             <option value="" selected="selected">(Select Your Age)</option>
+=======
+            <option value="" selected="selected">(Select your age)</option>
+>>>>>>> Stashed changes
             <option value="16">16</option>
             <option value="17">17</option>
             <option value="18">18</option>
@@ -220,23 +256,45 @@
             <option value="47">47</option>
             <option value="48">48</option>
             <option value="49">49</option>
+<<<<<<< Updated upstream
         </select><hr><br>
         <b>Sex</b><br><br>
         <select name="sex" id="sex">
             <option value="" selected="selected">(Select Your Sex)</option>
+=======
+            <option value="50">49</option>
+        </select>
+        <hr>
+        <br>
+        <b>What is your gender?</b>
+        <br>
+        <br>
+        <select name="gender" id="gender">
+            <option value="" selected="selected">(Select your gender)</option>
+>>>>>>> Stashed changes
             <option value="Male">Male</option>
             <option value="Female">Female</option>
             <option value="Other">Other</option>
-        </select><hr><br>
-        <b>Are you in the Master or Bachelor program?</b><br><br>
+        </select>
+        <hr>
+        <br>
+        <b>In which study program are you?</b>
+        <br>
+        <br>
         <select name="studyProgram" id="studyProgram">
-            <option value="" selected="selected">(Select Your Studyprogram)</option>
-            <option value="Bachelor">Bachelor</option>
-            <option value="Master">Master</option>
-            <option value="Other">Other</option>
-        </select><hr><br>
-        <b>Which semester?</b><br><br>
+            <option value="" selected="selected">(Select your studyprogram)</option>
+            <option value="bachelor">Bachelor</option>
+            <option value="master">Master</option>
+            <option value="phd">PhD</option>
+            <option value="other">Other</option>
+        </select>
+        <hr>
+        <br>
+        <b>In which semester are you? (total = bachelor + master)</b>
+        <br>
+        <br>
         <select name="semester" id="semester">
+<<<<<<< Updated upstream
             <option value="" selected="selected">(Select Your Semester)</option>
             <option value="01">1</option>
             <option value="02">2</option>
@@ -247,6 +305,18 @@
             <option value="07">7</option>
             <option value="08">8</option>
             <option value="09">9</option>
+=======
+            <option value="" selected="selected">(Select your semester)</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+>>>>>>> Stashed changes
             <option value="10">10</option>
             <option value="11">11</option>
             <option value="12">12</option>
@@ -263,6 +333,7 @@
             <option value="23">23</option>
             <option value="24">24</option>
             <option value="25">25</option>
+<<<<<<< Updated upstream
             <option value="26">26</option>
             <option value="27">27</option>
             <option value="28">28</option>
@@ -273,8 +344,13 @@
             <option value="33">33</option>
             <option value="34">34</option>
             </select><hr><br>
+=======
+        </select>
+        <hr>
+        <br>
+>>>>>>> Stashed changes
         <input id="userid" value="anonymous" type="hidden">
-        <input type="submit" value="Submit">
+        <input type="submit" value="Submit" class="btn btn-success">
     </form>
 </div>
 <br>

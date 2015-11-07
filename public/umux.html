@@ -60,14 +60,39 @@
 
     <div class="container">
         <h1>UMUX <small>(Usability Metric for User Experience)</small></h1>
-        <form>
-        <input id="userid" value="anonymous" type="hidden">
+        <form action="api/umux" method="POST">
+            <b>How well do you think you are prepared for your presentation?</b><br><br>
+            <table>
+                <tr class="middle_2">
+                    <th>Well prepared</th>
+                    <th>&nbsp;</th>
+                    <th>&nbsp;</th>
+                    <th>&nbsp;</th>
+                    <th>&nbsp;</th>
+                    <th>&nbsp;</th>
+                    <th>Not prepared</th>
+                </tr>
+                <tr class="middle_2">
+                    <td><input type="radio" name="question_1" id="q_1_1" value="1"></td>
+                    <td><input type="radio" name="question_1" id="q_1_2" value="2"></td>
+                    <td><input type="radio" name="question_1" id="q_1_3" value="3"></td>
+                    <td><input type="radio" name="question_1" id="q_1_4" value="4"></td>
+                    <td><input type="radio" name="question_1" id="q_1_5" value="5"></td>
+                    <td><input type="radio" name="question_1" id="q_1_6" value="6"></td>
+                    <td><input type="radio" name="question_1" id="q_1_7" value="7"></td>
+                </tr>
+            </table>
+            <br>
+            <input id="userid" value="anonymous" type="hidden">
+            <input id="submit" type="submit" value="Submit" class="btn btn-success">
         </form>
     </div>
 
     <!-- Bootstrap -->
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+
+    <!-- Cookies -->
     <script src="//cdn.rawgit.com/js-cookie/js-cookie/master/src/js.cookie.js"></script>
     <script src="js/setcookie.js"></script>
   </body>
