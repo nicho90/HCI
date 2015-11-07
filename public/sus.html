@@ -59,10 +59,224 @@
 
 
     <div class="container">
-        <h1>SUS <small>()</small></h1>
-        <form>
-        <input id="userid" value="anonymous" type="hidden">
+        <h1>SUS <small>(System Usability Scale)</small></h1>
+        <form action="api/sus" method="POST">
+            <br>
+            <b>1) I think that I would like to use this system frequently.</b>
+            <br>
+            <br>
+            <table>
+                <tr class="middle">
+                    <th>Strongly Disagree</th>
+                    <th>&nbsp;</th>
+                    <th>&nbsp;</th>
+                    <th>&nbsp;</th>
+                    <th>Strongly Agree</th>
+                </tr>
+                <tr class="middle">
+                    <td><input type="radio" name="question_1" id="q_1_1" value="1" required="required"></td>
+                    <td><input type="radio" name="question_1" id="q_1_2" value="2" required="required"></td>
+                    <td><input type="radio" name="question_1" id="q_1_3" value="3" required="required"></td>
+                    <td><input type="radio" name="question_1" id="q_1_4" value="4" required="required"></td>
+                    <td><input type="radio" name="question_1" id="q_1_5" value="5" required="required"></td>
+                </tr>
+            </table>
+            <hr>
+            <br>
+            <b>2) I found the system unnecessarily complex.</b>
+            <br>
+            <br>
+            <table>
+                <tr class="middle">
+                    <th>Strongly Disagree</th>
+                    <th>&nbsp;</th>
+                    <th>&nbsp;</th>
+                    <th>&nbsp;</th>
+                    <th>Strongly Agree</th>
+                </tr>
+                <tr class="middle">
+                    <td><input type="radio" name="question_2" id="q_2_1" value="1" required="required"></td>
+                    <td><input type="radio" name="question_2" id="q_2_2" value="2" required="required"></td>
+                    <td><input type="radio" name="question_2" id="q_2_3" value="3" required="required"></td>
+                    <td><input type="radio" name="question_2" id="q_2_4" value="4" required="required"></td>
+                    <td><input type="radio" name="question_2" id="q_2_5" value="5" required="required"></td>
+                </tr>
+            </table>
+            <hr>
+            <br>
+            <b>3) I thought the system was easy to use.</b>
+            <br>
+            <br>
+            <table>
+                <tr class="middle">
+                    <th>Strongly Disagree</th>
+                    <th>&nbsp;</th>
+                    <th>&nbsp;</th>
+                    <th>&nbsp;</th>
+                    <th>Strongly Agree</th>
+                </tr>
+                <tr class="middle">
+                    <td><input type="radio" name="question_3" id="q_3_1" value="1" required="required"></td>
+                    <td><input type="radio" name="question_3" id="q_3_2" value="2" required="required"></td>
+                    <td><input type="radio" name="question_3" id="q_3_3" value="3" required="required"></td>
+                    <td><input type="radio" name="question_3" id="q_3_4" value="4" required="required"></td>
+                    <td><input type="radio" name="question_3" id="q_3_5" value="5" required="required"></td>
+                </tr>
+            </table>
+            <hr>
+            <br>
+            <b>4) I think that I would need the support of a technical person to be able to use this system.</b>
+            <br>
+            <br>
+            <table>
+                <tr class="middle">
+                    <th>Strongly Disagree</th>
+                    <th>&nbsp;</th>
+                    <th>&nbsp;</th>
+                    <th>&nbsp;</th>
+                    <th>Strongly Agree</th>
+                </tr>
+                <tr class="middle">
+                    <td><input type="radio" name="question_4" id="q_4_1" value="1" required="required"></td>
+                    <td><input type="radio" name="question_4" id="q_4_2" value="2" required="required"></td>
+                    <td><input type="radio" name="question_4" id="q_4_3" value="3" required="required"></td>
+                    <td><input type="radio" name="question_4" id="q_4_4" value="4" required="required"></td>
+                    <td><input type="radio" name="question_4" id="q_4_5" value="5" required="required"></td>
+                </tr>
+            </table>
+            <hr>
+            <br>
+            <b>5) I found the various functions in this system were well integrated.</b>
+            <br>
+            <br>
+            <table>
+                <tr class="middle">
+                    <th>Strongly Disagree</th>
+                    <th>&nbsp;</th>
+                    <th>&nbsp;</th>
+                    <th>&nbsp;</th>
+                    <th>Strongly Agree</th>
+                </tr>
+                <tr class="middle">
+                    <td><input type="radio" name="question_5" id="q_5_1" value="1" required="required"></td>
+                    <td><input type="radio" name="question_5" id="q_5_2" value="2" required="required"></td>
+                    <td><input type="radio" name="question_5" id="q_5_3" value="3" required="required"></td>
+                    <td><input type="radio" name="question_5" id="q_5_4" value="4" required="required"></td>
+                    <td><input type="radio" name="question_5" id="q_5_5" value="5" required="required"></td>
+                </tr>
+            </table>
+            <hr>
+            <br>
+            <b>6) I thought there was too much inconsistency in this system.</b>
+            <br>
+            <br>
+            <table>
+                <tr class="middle">
+                    <th>Strongly Disagree</th>
+                    <th>&nbsp;</th>
+                    <th>&nbsp;</th>
+                    <th>&nbsp;</th>
+                    <th>Strongly Agree</th>
+                </tr>
+                <tr class="middle">
+                    <td><input type="radio" name="question_6" id="q_6_1" value="1" required="required"></td>
+                    <td><input type="radio" name="question_6" id="q_6_2" value="2" required="required"></td>
+                    <td><input type="radio" name="question_6" id="q_6_3" value="3" required="required"></td>
+                    <td><input type="radio" name="question_6" id="q_6_4" value="4" required="required"></td>
+                    <td><input type="radio" name="question_6" id="q_6_5" value="5" required="required"></td>
+                </tr>
+            </table>
+            <hr>
+            <br>
+            <b>7) I would imagine that most people would learn to use this system very quickly.</b>
+            <br>
+            <br>
+            <table>
+                <tr class="middle">
+                    <th>Strongly Disagree</th>
+                    <th>&nbsp;</th>
+                    <th>&nbsp;</th>
+                    <th>&nbsp;</th>
+                    <th>Strongly Agree</th>
+                </tr>
+                <tr class="middle">
+                    <td><input type="radio" name="question_7" id="q_7_1" value="1" required="required"></td>
+                    <td><input type="radio" name="question_7" id="q_7_2" value="2" required="required"></td>
+                    <td><input type="radio" name="question_7" id="q_7_3" value="3" required="required"></td>
+                    <td><input type="radio" name="question_7" id="q_7_4" value="4" required="required"></td>
+                    <td><input type="radio" name="question_7" id="q_7_5" value="5" required="required"></td>
+                </tr>
+            </table>
+            <hr>
+            <br>
+            <b>8) I found the system very cumbersome to use.</b>
+            <br>
+            <br>
+            <table>
+                <tr class="middle">
+                    <th>Strongly Disagree</th>
+                    <th>&nbsp;</th>
+                    <th>&nbsp;</th>
+                    <th>&nbsp;</th>
+                    <th>Strongly Agree</th>
+                </tr>
+                <tr class="middle">
+                    <td><input type="radio" name="question_8" id="q_8_1" value="1" required="required"></td>
+                    <td><input type="radio" name="question_8" id="q_8_2" value="2" required="required"></td>
+                    <td><input type="radio" name="question_8" id="q_8_3" value="3" required="required"></td>
+                    <td><input type="radio" name="question_8" id="q_8_4" value="4" required="required"></td>
+                    <td><input type="radio" name="question_8" id="q_8_5" value="5" required="required"></td>
+                </tr>
+            </table>
+            <hr>
+            <br>
+            <b>9) I felt very confident using the system.</b>
+            <br>
+            <br>
+            <table>
+                <tr class="middle">
+                    <th>Strongly Disagree</th>
+                    <th>&nbsp;</th>
+                    <th>&nbsp;</th>
+                    <th>&nbsp;</th>
+                    <th>Strongly Agree</th>
+                </tr>
+                <tr class="middle">
+                    <td><input type="radio" name="question_9" id="q_9_1" value="1" required="required"></td>
+                    <td><input type="radio" name="question_9" id="q_9_2" value="2" required="required"></td>
+                    <td><input type="radio" name="question_9" id="q_9_3" value="3" required="required"></td>
+                    <td><input type="radio" name="question_9" id="q_9_4" value="4" required="required"></td>
+                    <td><input type="radio" name="question_9" id="q_9_5" value="5" required="required"></td>
+                </tr>
+            </table>
+            <hr>
+            <br>
+            <b>10) I needed to learn a lot of things before I could get going with this system.</b>
+            <br>
+            <br>
+            <table>
+                <tr class="middle">
+                    <th>Strongly Disagree</th>
+                    <th>&nbsp;</th>
+                    <th>&nbsp;</th>
+                    <th>&nbsp;</th>
+                    <th>Strongly Agree</th>
+                </tr>
+                <tr class="middle">
+                    <td><input type="radio" name="question_10" id="q_10_1" value="1" required="required"></td>
+                    <td><input type="radio" name="question_10" id="q_10_2" value="2" required="required"></td>
+                    <td><input type="radio" name="question_10" id="q_10_3" value="3" required="required"></td>
+                    <td><input type="radio" name="question_10" id="q_10_4" value="4" required="required"></td>
+                    <td><input type="radio" name="question_10" id="q_10_5" value="5" required="required"></td>
+                </tr>
+            </table>
+            <hr>
+            <br>
+            <input id="userid" value="anonymous" type="hidden">
+            <input id="submit" type="submit" value="Submit" class="btn btn-success">
         </form>
+        <br>
+        <br>
     </div>
 
     <!-- Bootstrap -->
