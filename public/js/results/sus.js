@@ -27,13 +27,9 @@
                 data[i].score = finalScore;
 
                 // Highlighting of own row with calculated score
-                console.log(data[i].userId);
                 var highlight = '';
-                if(document.cookie === data[i].userId) {
-                    highlight = 'class="info"';
-                    console.log(document.cookie);
-                } else {
-                    console.log(document.cookie);
+                if(document.cookie.substr(7, 21) === data[i].userId) {
+                    highlight = ' class="info"';
                 }
 
                 $("#results tbody").append(
