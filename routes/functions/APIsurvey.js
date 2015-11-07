@@ -8,14 +8,12 @@ var SURVEY = require('../../config/models/survey');
 
 function Survey() {
     this.createEntry = function(callback, input) {
-        var entry = new SURVEY({
-            userId: input.userId
-        });
+        var entry = new SURVEY();
         if (input.date != undefined) {
             entry.date = input.date;
         }
         for (var attribute in input) {
-            if (attribute != 'userId' && attribute != 'data') {
+            if (attribute != 'date') {
                 entry[attribute] = input[attribute];
             }
         }
@@ -31,7 +29,17 @@ function Survey() {
     };
 
     this.getEntries = function(callback){
-        UMUX.find({},function(err, result){
+        SURVEY.find({},function(err, result){
+            if (err) {
+                callback({success: false, message: 'error in finding document'})
+            }
+            else {
+                callback({success: true, result: result})
+            }
+        }).select('-__v -_id')
+    };
+    this.getEntryByID = function(callback, id) {
+        SURVEY.find({'userId':id},function(err, result){
             if (err) {
                 callback({success: false, message: 'error in finding document'})
             }

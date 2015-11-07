@@ -59,7 +59,7 @@
 
 <div class="container">
     <h1>Survey</h1>
-    <form action="api/test" method="POST">
+    <form action="api/survey" method="POST">
         <div class="verticalLine">
         <b>How satisfied are you with your topic to present?</b><br><br>
         <table>
@@ -71,11 +71,11 @@
                 <th>Totally not</th>
             </tr>
             <tr class="middle">
-                <td><input type="radio" name="question1" id="sd1" value="1"></td>
-                <td><input type="radio" name="question1" id="d1" value="2"></td>
-                <td><input type="radio" name="question1" id="n1" value="3"></td>
-                <td><input type="radio" name="question1" id="a1" value="4"></td>
-                <td><input type="radio" name="question1" id="sa1" value="5"></td>
+                <td><input type="radio" name="question_1" id="sd1" value="1"></td>
+                <td><input type="radio" name="question_1" id="d1" value="2"></td>
+                <td><input type="radio" name="question_1" id="n1" value="3"></td>
+                <td><input type="radio" name="question_1" id="a1" value="4"></td>
+                <td><input type="radio" name="question_1" id="sa1" value="5"></td>
             </tr>
         </table><hr><br>
 
@@ -90,11 +90,11 @@
                 <th>Totally not</th>
             </tr>
             <tr class="middle">
-                <td><input type="radio" name="question2" id="sd2" value="1"></td>
-                <td><input type="radio" name="question2" id="d2" value="2"></td>
-                <td><input type="radio" name="question2" id="n2" value="3"></td>
-                <td><input type="radio" name="question2" id="a2" value="4"></td>
-                <td><input type="radio" name="question2" id="sa2" value="5"></td>
+                <td><input type="radio" name="question_2" id="sd2" value="1"></td>
+                <td><input type="radio" name="question_2" id="d2" value="2"></td>
+                <td><input type="radio" name="question_2" id="n2" value="3"></td>
+                <td><input type="radio" name="question_2" id="a2" value="4"></td>
+                <td><input type="radio" name="question_2" id="sa2" value="5"></td>
             </tr>
         </table><hr><br>
         <b>Have you already startet to work on your presentation?</b><br><br>
@@ -107,11 +107,11 @@
                 <th>No</th>
             </tr>
             <tr class="middle">
-                <td><input type="radio" name="question3" id="sd3" value="1"></td>
+                <td><input type="radio" name="question_3" id="sd3" value="1"></td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
-                <td><input type="radio" name="question3" id="sa3" value="5"></td>
+                <td><input type="radio" name="question_3" id="sa3" value="5"></td>
             </tr>
         </table><hr><br>
         <b>Are you already done with it?</b><br><br>
@@ -124,11 +124,11 @@
                 <th>No</th>
             </tr>
             <tr class="middle">
-                <td><input type="radio" name="question4" id="sd4" value="1"></td>
+                <td><input type="radio" name="question_4" id="sd4" value="1"></td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
-                <td><input type="radio" name="question4" id="sa4" value="5"></td>
+                <td><input type="radio" name="question_4" id="sa4" value="5"></td>
             </tr>
         </table><hr><br>
         <b>How well do you think you are prepared for your presentation?</b><br><br>
@@ -141,11 +141,11 @@
                 <th>Not prepared</th>
             </tr>
             <tr class="middle">
-                <td><input type="radio" name="question5" id="sd5" value="1"></td>
-                <td><input type="radio" name="question5" id="d5" value="2"></td>
-                <td><input type="radio" name="question5" id="n5" value="3"></td>
-                <td><input type="radio" name="question5" id="a5" value="4"></td>
-                <td><input type="radio" name="question5" id="sa5" value="5"></td>
+                <td><input type="radio" name="question_5" id="sd5" value="1"></td>
+                <td><input type="radio" name="question_5" id="d5" value="2"></td>
+                <td><input type="radio" name="question_5" id="n5" value="3"></td>
+                <td><input type="radio" name="question_5" id="a5" value="4"></td>
+                <td><input type="radio" name="question_5" id="sa5" value="5"></td>
             </tr>
         </table><hr><br>
         <b>Are you aware that you can borrow a presenter in the zdm?</b><br><br>
@@ -158,11 +158,11 @@
                 <th>No</th>
             </tr>
             <tr class="middle">
-                <td><input type="radio" name="question6" id="sd6" value="1"></td>
+                <td><input type="radio" name="question_6" id="sd6" value="1"></td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
-                <td><input type="radio" name="question6" id="sa6" value="5"></td>
+                <td><input type="radio" name="question_6" id="sa6" value="5"></td>
             </tr>
         </table><hr><br>
         <b>Are you aware that you can borrow a hdmi cable in the zdm?</b><br><br>
@@ -175,51 +175,51 @@
                 <th>No</th>
             </tr>
             <tr class="middle">
-                <td><input type="radio" name="question7" id="sd7" value="1"></td>
+                <td><input type="radio" name="question_7" id="sd7" value="1"></td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
-                <td><input type="radio" name="question7" id="sa7" value="5"></td>
+                <td><input type="radio" name="question_7" id="sa7" value="5"></td>
             </tr>
         </table><hr><br>
         <b>How old are you?</b><br><br>
 
         <select name="age" id="age">
             <option value="" selected="selected">(Select Your Age)</option>
-            <option value="016">16</option>
-            <option value="017">17</option>
-            <option value="018">18</option>
-            <option value="019">19</option>
-            <option value="020">20</option>
-            <option value="021">21</option>
-            <option value="022">22</option>
-            <option value="023">23</option>
-            <option value="024">24</option>
-            <option value="025">25</option>
-            <option value="026">26</option>
-            <option value="027">27</option>
-            <option value="028">28</option>
-            <option value="029">29</option>
-            <option value="030">30</option>
-            <option value="031">31</option>
-            <option value="032">32</option>
-            <option value="033">33</option>
-            <option value="034">34</option>
-            <option value="035">35</option>
-            <option value="036">36</option>
-            <option value="037">37</option>
-            <option value="038">38</option>
-            <option value="039">39</option>
-            <option value="040">40</option>
-            <option value="041">41</option>
-            <option value="042">42</option>
-            <option value="043">43</option>
-            <option value="044">44</option>
-            <option value="045">45</option>
-            <option value="046">46</option>
-            <option value="047">47</option>
-            <option value="048">48</option>
-            <option value="049">49</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="27">27</option>
+            <option value="28">28</option>
+            <option value="29">29</option>
+            <option value="30">30</option>
+            <option value="31">31</option>
+            <option value="32">32</option>
+            <option value="33">33</option>
+            <option value="34">34</option>
+            <option value="35">35</option>
+            <option value="36">36</option>
+            <option value="37">37</option>
+            <option value="38">38</option>
+            <option value="39">39</option>
+            <option value="40">40</option>
+            <option value="41">41</option>
+            <option value="42">42</option>
+            <option value="43">43</option>
+            <option value="44">44</option>
+            <option value="45">45</option>
+            <option value="46">46</option>
+            <option value="47">47</option>
+            <option value="48">48</option>
+            <option value="49">49</option>
         </select><hr><br>
         <b>Sex</b><br><br>
         <select name="sex" id="sex">
@@ -238,40 +238,40 @@
         <b>Which semester?</b><br><br>
         <select name="semester" id="semester">
             <option value="" selected="selected">(Select Your Semester)</option>
-            <option value="001">1</option>
-            <option value="002">2</option>
-            <option value="003">3</option>
-            <option value="004">4</option>
-            <option value="005">5</option>
-            <option value="006">6</option>
-            <option value="007">7</option>
-            <option value="008">8</option>
-            <option value="009">9</option>
-            <option value="010">10</option>
-            <option value="011">11</option>
-            <option value="012">12</option>
-            <option value="013">13</option>
-            <option value="014">14</option>
-            <option value="015">15</option>
-            <option value="016">16</option>
-            <option value="017">17</option>
-            <option value="018">18</option>
-            <option value="019">19</option>
-            <option value="020">20</option>
-            <option value="021">21</option>
-            <option value="022">22</option>
-            <option value="023">23</option>
-            <option value="024">24</option>
-            <option value="025">25</option>
-            <option value="026">26</option>
-            <option value="027">27</option>
-            <option value="028">28</option>
-            <option value="029">29</option>
-            <option value="030">30</option>
-            <option value="031">31</option>
-            <option value="032">32</option>
-            <option value="033">33</option>
-            <option value="034">34</option>
+            <option value="01">1</option>
+            <option value="02">2</option>
+            <option value="03">3</option>
+            <option value="04">4</option>
+            <option value="05">5</option>
+            <option value="06">6</option>
+            <option value="07">7</option>
+            <option value="08">8</option>
+            <option value="09">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="27">27</option>
+            <option value="28">28</option>
+            <option value="29">29</option>
+            <option value="30">30</option>
+            <option value="31">31</option>
+            <option value="32">32</option>
+            <option value="33">33</option>
+            <option value="34">34</option>
             </select><hr><br>
         <input id="userid" value="anonymous" type="hidden">
         <input type="submit" value="Submit">

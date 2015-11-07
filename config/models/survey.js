@@ -7,11 +7,17 @@ var mongoose = require('mongoose');
 var surveySchema = mongoose.Schema({
     date  :  { type: Date, default: Date.now },
     userId: String,
+    age: Number,
+    semester: Number,
+    gender: String,
+    program: String,
     question_1: Number,
     question_2: Number,
     question_3: Number,
     question_4: Number,
-    question_5: Number
+    question_5: Number,
+    question_6: Number,
+    question_7: Number
 });
 
 // create the model for measurements and expose it to our app

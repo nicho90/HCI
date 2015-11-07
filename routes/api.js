@@ -5,7 +5,6 @@ var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
 var dbConnections = require('../config/dbs');
-console.log(dbConnections);
 mongoose.connect(dbConnections.MongoDB);
 var diaries = require('./functions/APIDiaries')();
 var nasatlx = require('./functions/APInasatlx')();
@@ -60,8 +59,10 @@ router.get('/umux', function(req,res,next) {
   })
 });
 router.post('/survey', function(req, res, next) {
+  var userId = req.cookies.uniqid;
+  req.body.userId = userId;
   survey.createEntry(function(result){
-    res.send(result)
+    res.redirect('/result/survey/'+userId)
   },req.body);
 });
 router.get('/survey', function(req,res,next) {
@@ -75,7 +76,8 @@ router.get('/userId', function(req,res,next) {
   })
 });
 router.post('/test', function(req,res,next) {
-  console.log(req);
+  console.log(req.body);
+  console.log(req.cookies.uniqid);
   res.redirect('/');
 });
 module.exports = router;
