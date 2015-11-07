@@ -30,7 +30,18 @@
             }
 
             $("#results tbody").append(
-                '<tr><td>' + i + '</td><td>' + data[i].score + '</td></tr>'
+                '<tr><th>' + i + '</th>' +
+                '<td>' + data[i].question_1 + '</td>' +
+                '<td>' + data[i].question_2 + '</td>' +
+                '<td>' + data[i].question_3 + '</td>' +
+                '<td>' + data[i].question_4 + '</td>' +
+                '<td>' + data[i].question_5 + '</td>' +
+                '<td>' + data[i].question_6 + '</td>' +
+                '<td>' + data[i].question_7 + '</td>' +
+                '<td>' + data[i].question_8 + '</td>' +
+                '<td>' + data[i].question_9 + '</td>' +
+                '<td>' + data[i].question_10 + '</td>' +
+                '<th>' + data[i].score + '</th></tr>'
             );
         } else {
             console.log("No sus-data available.");
