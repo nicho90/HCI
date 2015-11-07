@@ -39,6 +39,16 @@ function Nasatlx() {
         }).select('-__v -_id')
     }
 
+    this.getEntryByID = function(callback, id) {
+        NASATLX.find({'userId':id},function(err, result){
+            if (err) {
+                callback({success: false, message: 'error in finding document'})
+            }
+            else {
+                callback({success: true, result: result})
+            }
+        }).select('-__v -_id')
+    }
 }
 module.exports = function() {
     return new Nasatlx();

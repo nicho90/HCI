@@ -17,10 +17,23 @@ router.get('/diaries', function(req,res,next) {
         res.send(result)
     })
 });
-router.get('/nasatlx', function(req,res,next) {
-    nasatlx.getEntries(function(result){
-        res.send(result)
-    })
+router.get('/nasatlx/:id', function(req,res,next) {
+    var userId = req.cookies.uniqid;
+    console.log('hello')
+    if (req.params.id === 'all') {
+        nasatlx.getEntries(function(result) {
+            res.send(result)
+        })
+    }
+    else if ( req.params.id === 'myResult' ) {
+
+        res.redirect('/result/nasatlx/'+userId)
+    }
+    else {
+        nasatlx.getEntryByID(function(result) {
+            res.send(result)
+        }, req.params.id)
+    }
 });
 router.get('/umux', function(req,res,next) {
     umux.getEntries(function(result){
