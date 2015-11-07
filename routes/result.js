@@ -10,69 +10,73 @@ var sus = require('./functions/APIsus')();
 var survey = require('./functions/APIsurvey')();
 var userId = require('./functions/getid')();
 
+
 // DIARIES
 router.get('/diaries', function(req,res,next) {
     diaries.getEntries(function(result){
-        res.send(result)
-    })
+        res.send(result);
+    });
 });
 
 
 // NASA-TLX
 router.get('/nasatlx', function(req,res,next) {
     nasatlx.getEntries(function(result){
-        res.send(result)
-    })
+        res.send(result);
+    });
+});
 
 router.get('/nasatlx/:id', function(req,res,next) {
     var userId = req.cookies.uniqid;
-    console.log('hello')
     if (req.params.id === 'all') {
         nasatlx.getEntries(function(result) {
-            res.send(result)
-        })
+            res.send(result);
+        });
     }
     else if ( req.params.id === 'myResult' ) {
 
-        res.redirect('/result/nasatlx/'+userId)
+        res.redirect('/result/nasatlx/'+userId);
     }
     else {
         nasatlx.getEntryByID(function(result) {
-            res.send(result)
-        }, req.params.id)
+            res.send(result);
+        }, req.params.id);
     }
 });
+
 
 // UMUX
 router.get('/umux', function(req,res,next) {
     umux.getEntries(function(result){
-        res.send(result)
-    })
+        res.send(result);
+    });
 });
+
 
 // SUS
 router.get('/sus', function(req,res,next) {
     sus.getEntries(function(result){
-        res.send(result)
-    })
+        res.send(result);
+    });
 });
+
 
 // SURVEY
 router.get('/survey/:id', function(req,res,next) {
     var userId = req.cookies.uniqid;
     if (req.params.id === 'all') {
         survey.getEntries(function(result) {
-            res.send(result)
-        })
+            res.send(result);
+        });
     }
     else if ( req.params.id === 'myResult' ) {
 
-        res.redirect('/result/survey/'+userId)
+        res.redirect('/result/survey/'+userId);
     }
     else {
         survey.getEntryByID(function(result) {
-            res.send(result)
-        }, req.params.id)
+            res.send(result);
+        }, req.params.id);
     }
 });
 

@@ -42,11 +42,6 @@ router.get('/survey', function(req, res, next) {
   response.write('../public/diaries.html');
   response.end();
 });
-
-router.get('/diary', function(req, res, next) {
-  response.writeHeader(200, {"Content-Type": "text/html"});
-  response.write('../public/diary.html');
-  response.end();
-});*/
+*/
 
 module.exports = router;

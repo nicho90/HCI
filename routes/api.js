@@ -19,8 +19,8 @@ var userId = require('./functions/getid')();
 router.post('/diaries', function(req, res, next) {
   if (req.body.userId != undefined && req.body.device != undefined && req.body.reason != undefined ) {
     diaries.createEntry(function(result){
-      res.send(result)
-    },req.body)
+      res.send(result);
+    },req.body);
   }
   else {
     res.send({success: false, message: 'missing or false input'})
@@ -28,9 +28,9 @@ router.post('/diaries', function(req, res, next) {
 });
 
 router.get('/diaries', function(req,res,next) {
-  diaries.getEntries(function(result){
-    res.send(result)
-  })
+    diaries.getEntries(function(result){
+        res.send(result);
+    });
 });
 
 
@@ -39,53 +39,64 @@ router.post('/nasatlx', function(req, res, next) {
   var userId = req.cookies.uniqid;
   req.query.userId = userId;
   if (req.query.mentalDemand != undefined &&
-      req.query.temporalDemand != undefined &&
-      req.query.performance != undefined &&
-      req.query.effort != undefined &&
-      req.query.frustration != undefined &&
-      req.query.physicalDemand != undefined ) {
+        req.query.temporalDemand != undefined &&
+        req.query.performance != undefined &&
+        req.query.effort != undefined &&
+        req.query.frustration != undefined &&
+        req.query.physicalDemand != undefined ) {
     nasatlx.createEntry(function(result){
-      console.log(result)
-      res.send(result);
-    },req.query)
+        console.log(result);
+        res.send(result);
+    },req.query);
   }
   else {
-    res.send({success: false, message: 'missing or false input'})
+    res.send({success: false, message: 'missing or false input'});
   }
 });
 
 router.get('/nasatlx', function(req,res,next) {
-  nasatlx.getEntries(function(result){
-    res.send(result)
-  })
+    nasatlx.getEntries(function(result){
+      res.send(result);
+  });
 });
 
 
 // UMUX
 router.post('/umux', function(req, res, next) {
-  umux.createEntry(function(result){
-    res.send(result)
-  },req.body);
+    umux.createEntry(function(result){
+        res.send(result);
+    },req.body);
 });
 
 router.get('/umux', function(req,res,next) {
-  umux.getEntries(function(result){
-    res.send(result)
-  })
+    umux.getEntries(function(result){
+      res.send(result);
+    });
 });
 
 
 // SUS
 router.post('/sus', function(req, res, next) {
-  sus.createEntry(function(result){
-    res.send(result)
-  },req.body);
-});
+    var userId = req.cookies.uniqid;
+    req.body.userId = userId;
+    if (req.body.question_1 != undefined &&
+        req.body.question_2 != undefined &&
+        req.body.question_3 != undefined &&
+        req.body.question_4 != undefined &&
+        req.body.question_5 != undefined &&
+        req.body.question_6 != undefined &&
+        req.body.question_7 != undefined &&
+        req.body.question_8 != undefined &&
+        req.body.question_9 != undefined &&
+        req.body.question_10 != undefined ) {
 
-router.get('/sus', function(req,res,next) {
-  sus.getEntries(function(result){
-    res.send(result)
-  })
+        sus.createEntry(function(result){
+            console.log(result);
+            res.redirect('/results-sus.html');
+        },req.body);
+    } else {
+        res.send({success: false, message: 'missing or false input'});
+    }
 });
 
 
@@ -94,13 +105,13 @@ router.post('/survey', function(req, res, next) {
   var userId = req.cookies.uniqid;
   req.body.userId = userId;
   survey.createEntry(function(result){
-    res.redirect('/result/survey/'+userId)
+    res.redirect('/result/survey/'+userId);
   },req.body);
 });
 
 router.get('/survey', function(req,res,next) {
   survey.getEntries(function(result){
-    res.send(result)
+    res.send(result);
   })
 });
 
@@ -108,7 +119,7 @@ router.get('/survey', function(req,res,next) {
 // USER
 router.get('/userId', function(req,res,next) {
   userId.getID(function(result){
-    res.send(result)
+    res.send(result);
   })
 });
 

@@ -4,7 +4,7 @@
 var mongoose = require('mongoose');
 
 // define the schema for our user model
-var umuxSchema = mongoose.Schema({
+var susSchema = mongoose.Schema({
     date  :  { type: Date, default: Date.now },
     userId: String,
     question_1: Number,
