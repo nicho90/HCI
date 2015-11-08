@@ -6,6 +6,8 @@
     $.get( "result/sus", function( data ) {
         if(data.length != 0) {
 
+            var finalScores = [];
+
             // START SCORE CALCULATION
             for(var i=0; i<data.length; i++) {
 
@@ -25,6 +27,7 @@
                 var finalScore = sum*2.5;
 
                 data[i].score = finalScore;
+                finalScores.push(finalScore);
 
                 // Highlighting of own row with calculated score
                 var highlight = '';
@@ -50,5 +53,84 @@
         } else {
             console.log("No sus-data available.");
         }
+
+        // MEAN SCORE
+        var meanScore = 0;
+        for(var i=0; i<data.length; i++) {
+            meanScore = meanScore + data[i].score;
+        }
+        meanScore = meanScore/data.length;
+
+        // VARIANZ
+        var s = 0;
+        for(var i=0; i<data.length; i++) {
+            s = s + Math.pow((data[i].score-meanScore),2);
+        }
+        s = s/data.length;
+        s = Math.sqrt(s);
+
+        // MIN-MAX
+        var max = Math.max.apply(null, finalScores);
+        var min = Math.min.apply(null, finalScores);
+
+        $("#results tbody").append(
+            '<tr><th>MEAN</th>' +
+            '<td></td>' +
+            '<td></td>' +
+            '<td></td>' +
+            '<td></td>' +
+            '<td></td>' +
+            '<td></td>' +
+            '<td></td>' +
+            '<td></td>' +
+            '<td></td>' +
+            '<th></th>' +
+            '<th>' + meanScore + '</th></tr>'
+        );
+
+        $("#results tbody").append(
+            '<tr><th>STD</th>' +
+            '<td></td>' +
+            '<td></td>' +
+            '<td></td>' +
+            '<td></td>' +
+            '<td></td>' +
+            '<td></td>' +
+            '<td></td>' +
+            '<td></td>' +
+            '<td></td>' +
+            '<th></th>' +
+            '<th>' + s + '</th></tr>'
+        );
+
+        $("#results tbody").append(
+            '<tr><th>MIN</th>' +
+            '<td></td>' +
+            '<td></td>' +
+            '<td></td>' +
+            '<td></td>' +
+            '<td></td>' +
+            '<td></td>' +
+            '<td></td>' +
+            '<td></td>' +
+            '<td></td>' +
+            '<th></th>' +
+            '<th>' + min + '</th></tr>'
+        );
+
+        $("#results tbody").append(
+            '<tr><th>MAX</th>' +
+            '<td></td>' +
+            '<td></td>' +
+            '<td></td>' +
+            '<td></td>' +
+            '<td></td>' +
+            '<td></td>' +
+            '<td></td>' +
+            '<td></td>' +
+            '<td></td>' +
+            '<th></th>' +
+            '<th>' + max + '</th></tr>'
+        );
     });
  });
