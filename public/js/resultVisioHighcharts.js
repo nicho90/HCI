@@ -4,7 +4,7 @@
 
 
 function init() {
-    loadSurvey2();
+    loadSurvey1();
 }
 
 init();
