@@ -66,17 +66,18 @@ router.get('/survey/:id', function(req,res,next) {
     var userId = req.cookies.uniqid;
     if (req.params.id === 'all') {
         survey.getEntries(function(result) {
-            res.send(result);
+            res.render('result-survey', {options: result.options});
         });
     }
     else if ( req.params.id === 'myResult' ) {
-
-        res.redirect('/result/survey/'+userId);
+        survey.getEntryByID(function(result) {
+            res.render('personal-result-survey',{options: result.result[0]});
+        }, userId);
     }
     else {
         survey.getEntryByID(function(result) {
-            res.send(result);
-        }, req.params.id);
+            res.render('personal-result-survey',{options: result.result[0]});
+        }, userId);
     }
 });
 
