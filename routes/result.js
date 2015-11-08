@@ -8,7 +8,7 @@ var nasatlx = require('./functions/APInasatlx')();
 var umux = require('./functions/APIumux')();
 var sus = require('./functions/APIsus')();
 var survey = require('./functions/APIsurvey')();
-var userId = require('./functions/getid')();
+var userId = require('./functions/getId')();
 
 
 // DIARIES

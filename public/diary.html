@@ -40,7 +40,7 @@
 
                 <!--NAVBAR LEFT -->
                 <ul class="nav navbar-nav">
-                    <li>
+                    <li class="active">
                         <a href="diary.html"><span class="glyphicon glyphicon-edit"></span>&nbsp;&nbsp;Diary</a>
                     </li>
                     <li>
@@ -62,10 +62,71 @@
 
 
     <div class="container">
-        <div class="starter-template">
-            <h1>HCI-Research Methods</h1>
-            <p class="lead">2015-11-09</p>
-      </div>
+        <div class="saved-successfully">Entry saved!</div>
+        <h1>Feedback Diary</h1>
+        <form action="api/diary" method="POST">
+            <br>
+            <b>1) Why did you look at your phone or computer? (Check the most appropiate)</b>
+            <br>
+            <br>
+            <table>
+                <tr>
+                    <td><input type="radio" name="question_1" id="q_1_1" value="1" required="required"> <label for="q_1_1">You told me to</label></td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="question_1" id="q_1_2" value="2" required="required"> <label for="q_1_2">Check the time</label></td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="question_1" id="q_1_3" value="3" required="required"> <label for="q_1_3">Check notifications</label></td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="question_1" id="q_1_4" value="4" required="required"> <label for="q_1_4">Check emails or social media</label></td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="question_1" id="q_1_5" value="5" required="required"> <label for="q_1_5">No reason, boredom</label></td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="question_1" id="q_1_6" value="6" required="required"> <label for="q_1_6">Other reason</label></td>
+                </tr>
+            </table>
+            <hr>
+            <br>
+            <b>2) Are you able to follow this topic?</b>
+            <br>
+            <br>
+            <table>
+                <tr class="middle">
+                    <th>Mostly Yes</th>
+                    <th>&nbsp;</th>
+                    <th>&nbsp;</th>
+                    <th>&nbsp;</th>
+                    <th>Mostly No</th>
+                </tr>
+                <tr class="middle">
+                    <td><input type="radio" name="question_2" id="q_2_1" value="1" required="required"></td>
+                    <td><input type="radio" name="question_2" id="q_2_2" value="2" required="required"></td>
+                    <td><input type="radio" name="question_2" id="q_2_3" value="3" required="required"></td>
+                    <td><input type="radio" name="question_2" id="q_2_4" value="4" required="required"></td>
+                    <td><input type="radio" name="question_2" id="q_2_5" value="5" required="required"></td>
+                </tr>
+            </table>
+            <hr>
+            <br>
+            <b>3) Anything else you would like to tell us?</b>
+            <br>
+            <br>
+            <table>
+                <tr class="middle">
+                    <td><textarea name="question_3" style="width:100%;font-face:sans-serif"></textarea></td>
+                </tr>
+            </table>
+            <hr>
+            <br>
+            <input id="userid" value="anonymous" type="hidden">
+            <input id="submit" type="submit" value="Submit" class="btn btn-success">
+        </form>
+        <br>
+        <br>
     </div>
 
     <!-- Bootstrap -->
@@ -73,5 +134,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
     <script src="//cdn.rawgit.com/js-cookie/js-cookie/master/src/js.cookie.js"></script>
     <script src="js/setcookie.js"></script>
+    <script src="js/diary.js"></script>
   </body>
 </html>

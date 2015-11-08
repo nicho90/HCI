@@ -12,7 +12,7 @@ var nasatlx = require('./functions/APInasatlx')();
 var umux = require('./functions/APIumux')();
 var sus = require('./functions/APIsus')();
 var survey = require('./functions/APIsurvey')();
-var userId = require('./functions/getid')();
+var userId = require('./functions/getId')();
 
 
 // DIARIES
@@ -116,6 +116,24 @@ router.get('/survey', function(req,res,next) {
   survey.getEntries(function(result){
     res.send(result);
   })
+});
+
+// Diary
+
+// SUS
+router.post('/diary', function(req, res, next) {
+    var userId = req.cookies.uniqid;
+    req.body.userId = userId;
+    var now = new Date().getTime();
+    if (req.body.question_1 != undefined &&
+        req.body.question_2 != undefined ) {
+
+        diaries.createEntry(function(result){
+            res.redirect('/diary.html?saved=yes&t='+now);
+        },req.body);
+    } else {
+        res.send({success: false, message: 'missing or false input'});
+    }
 });
 
 

@@ -8,8 +8,9 @@ function Diaries() {
     this.createEntry = function(callback, input) {
         var entry = new Diarie({
             userId: input.userId,
-            device: input.device,
-            reason: input.reason
+            reason: input.reason,
+            canfollow: input.canfollow,
+            message: input.message
         })
         if (input.date != undefined) {
             entry.date = input.date;

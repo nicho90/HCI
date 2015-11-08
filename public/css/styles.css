@@ -26,3 +26,10 @@ body {
     text-align: center;
     width: 14%;
 }
+
+.saved-successfully {
+  display:none;
+  padding:10px;
+  background-color:#0b0;
+  color:white
+}
