@@ -1,13 +1,6 @@
 /**
  * Created by Andre on 08.11.2015.
  */
-
-
-function init() {
-    loadSurvey1();
-}
-
-init();
 function loadSurvey1(options){
     $(function () {
         $('#resultSurvey').highcharts({
@@ -20,3 +13,4 @@ function loadSurvey1(options){
         });
     });
 }
+loadSurvey1(options);
