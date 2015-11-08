@@ -75,8 +75,8 @@ router.get('/survey/:id', function(req,res,next) {
         }, userId);
     }
     else {
-        survey.getEntryByID(function(result) {
-            res.render('personal-result-survey',{options: result.result[0]});
+        survey.getEntries(function(result) {
+            res.send(result);
         }, userId);
     }
 });

@@ -133,24 +133,24 @@ function createHighChartsOptionsGender(result) {
     console.log(options.question_6.title.text )
 
     for (var i = 0; i < result.length; i++) {
-        var index = result[i].question_1 -1;
+        console.log
         if (result[i].gender === 'Male') {
-            options.question_1.series[0].data[index] += 1;
-            options.question_2.series[0].data[index] += 1;
-            options.question_3.series[0].data[index] += 1;
-            options.question_4.series[0].data[index] += 1;
-            options.question_5.series[0].data[index] += 1;
-            options.question_6.series[0].data[index] += 1;
-            options.question_7.series[0].data[index] += 1;
+            options.question_1.series[0].data[result[i].question_1 -1] += 1;
+            options.question_2.series[0].data[result[i].question_2 -1] += 1;
+            options.question_3.series[0].data[result[i].question_3 -1] += 1;
+            options.question_4.series[0].data[result[i].question_4 -1] += 1;
+            options.question_5.series[0].data[result[i].question_5 -1] += 1;
+            options.question_6.series[0].data[result[i].question_6 -1] += 1;
+            options.question_7.series[0].data[result[i].question_7 -1] += 1;
         }
         else {
-            options.question_1.series[1].data[index] += 1;
-            options.question_2.series[1].data[index] += 1;
-            options.question_3.series[1].data[index] += 1;
-            options.question_4.series[1].data[index] += 1;
-            options.question_5.series[1].data[index] += 1;
-            options.question_6.series[1].data[index] += 1;
-            options.question_7.series[1].data[index] += 1;
+            options.question_1.series[1].data[result[i].question_1 -1] += 1;
+            options.question_2.series[1].data[result[i].question_2 -1] += 1;
+            options.question_3.series[1].data[result[i].question_3 -1] += 1;
+            options.question_4.series[1].data[result[i].question_4 -1] += 1;
+            options.question_5.series[1].data[result[i].question_5 -1] += 1;
+            options.question_6.series[1].data[result[i].question_6 -1] += 1;
+            options.question_7.series[1].data[result[i].question_7 -1] += 1;
         }
     }
     return options;
