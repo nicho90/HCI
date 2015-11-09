@@ -121,10 +121,27 @@ function buttonPart1()
 
     console.log("api/nasatlx" + createURL(results_rating));
 
-    $.post( "api/nasatlx" + createURL(results_rating), function( data ) {
-        location.href='/results-nasatlx.html';
-    });
+    var _data = {
+        "userId" : document.cookie.substr(7, 21),
+        "mentalDemand" : valueArray[0],
+        "physicalDemand" : valueArray[1],
+        "temporalDemand" : valueArray[2],
+        "performance" : valueArray[3],
+        "effort" : valueArray[4],
+        "frustration" : valueArray[5]
+    }
 
+    $.ajax({
+        type: 'POST',
+        url: 'api/nasatlx',
+        data: _data,
+        success: function(data) {
+            //location.href='/results-nasatlx.html'
+        },
+        contentType: "application/json",
+        dataType: 'json'
+    });
+    
     /*var urlString = ;
     executeRequest(urlString, function() {
 
