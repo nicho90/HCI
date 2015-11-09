@@ -16,15 +16,19 @@ var userId = require('./functions/getId')();
 
 
 // DIARIES
-router.post('/diaries', function(req, res, next) {
-  if (req.body.userId != undefined && req.body.device != undefined && req.body.reason != undefined ) {
-    diaries.createEntry(function(result){
-      res.send(result);
-    },req.body);
-  }
-  else {
-    res.send({success: false, message: 'missing or false input'})
-  }
+router.post('/diary', function(req, res, next) {
+    var userId = req.cookies.uniqid;
+    req.body.userId = userId;
+    var now = new Date().getTime();
+    if (req.body.question_1 != undefined &&
+        req.body.question_2 != undefined ) {
+
+        diaries.createEntry(function(result){
+            res.redirect('/diary.html?saved=yes&t='+now);
+        },req.body);
+    } else {
+        res.send({success: false, message: 'missing or false input'});
+    }
 });
 
 router.get('/diaries', function(req,res,next) {
@@ -38,6 +42,7 @@ router.get('/diaries', function(req,res,next) {
 router.post('/nasatlx', function(req, res, next) {
     var userId = req.cookies.uniqid;
     req.body.userId = userId;
+    console.log(req.body);
     if (req.body.mentalDemand != undefined &&
         req.body.physicalDemand != undefined &&
         req.body.temporalDemand != undefined &&
@@ -140,24 +145,6 @@ router.get('/survey', function(req,res,next) {
   survey.getEntries(function(result){
     res.send(result);
   })
-});
-
-// Diary
-
-// SUS
-router.post('/diary', function(req, res, next) {
-    var userId = req.cookies.uniqid;
-    req.body.userId = userId;
-    var now = new Date().getTime();
-    if (req.body.question_1 != undefined &&
-        req.body.question_2 != undefined ) {
-
-        diaries.createEntry(function(result){
-            res.redirect('/diary.html?saved=yes&t='+now);
-        },req.body);
-    } else {
-        res.send({success: false, message: 'missing or false input'});
-    }
 });
 
 

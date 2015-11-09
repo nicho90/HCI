@@ -5,7 +5,7 @@ var mongoose = require('mongoose');
 
 // define the schema for our user model
 var nasatlxSchema = mongoose.Schema({
-    date  :  { type: Date, default: Date.now },
+    date:  { type: Date, default: Date.now },
     userId: String,
     mentalDemand: Number,
     physicalDemand: Number,

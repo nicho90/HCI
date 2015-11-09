@@ -7,8 +7,9 @@ var mongoose = require('mongoose');
 var diarySchema = mongoose.Schema({
     date  :  { type: Date, default: Date.now },
     userId: String,
-    device: String,
-    reason: String
+	reason: Number,
+	canfollow: Number,
+	message: String
 });
 
 // create the model for measurements and expose it to our app

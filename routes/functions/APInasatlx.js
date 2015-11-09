@@ -5,6 +5,8 @@ var NASATLX = require('../../config/models/nasatlx');
 
 function Nasatlx() {
     this.createEntry = function(callback, input) {
+        console.log(input);
+
         var entry = new NASATLX({
             userId: input.userId,
             mentalDemand: input.mentalDemand,

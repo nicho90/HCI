@@ -122,21 +122,21 @@ function buttonPart1()
     console.log("api/nasatlx" + createURL(results_rating));
 
     var _data = {
-        "userId" : document.cookie.substr(7, 21),
-        "mentalDemand" : valueArray[0],
-        "physicalDemand" : valueArray[1],
-        "temporalDemand" : valueArray[2],
-        "performance" : valueArray[3],
-        "effort" : valueArray[4],
-        "frustration" : valueArray[5]
-    }
-
+        "userId": document.cookie.substr(7, 21),
+        "mentalDemand": results_rating[0],
+        "physicalDemand": results_rating[1],
+        "temporalDemand": results_rating[2],
+        "performance": results_rating[3],
+        "effort": results_rating[4],
+        "frustration": results_rating[5]
+    };
+console.log(_data);
     $.ajax({
         type: 'POST',
         url: 'api/nasatlx',
         data: _data,
         success: function(data) {
-            //location.href='/results-nasatlx.html'
+            location.href='/results-nasatlx.html'
         },
         contentType: "application/json",
         dataType: 'json'
