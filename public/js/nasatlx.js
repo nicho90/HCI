@@ -119,18 +119,16 @@ function buttonPart1()
         }
     }
 
-    console.log("api/nasatlx" + createURL(results_rating));
-
     var _data = {
-        "userId": document.cookie.substr(7, 21),
-        "mentalDemand": results_rating[0],
-        "physicalDemand": results_rating[1],
-        "temporalDemand": results_rating[2],
-        "performance": results_rating[3],
-        "effort": results_rating[4],
-        "frustration": results_rating[5]
+        userId: document.cookie.substr(7, 21),
+        mentalDemand: results_rating[0],
+        physicalDemand: results_rating[1],
+        temporalDemand: results_rating[2],
+        performance: results_rating[3],
+        effort: results_rating[4],
+        frustration: results_rating[5]
     };
-console.log(_data);
+    console.log(_data);
     $.ajax({
         type: 'POST',
         url: 'api/nasatlx',
@@ -141,7 +139,7 @@ console.log(_data);
         contentType: "application/json",
         dataType: 'json'
     });
-    
+
     /*var urlString = ;
     executeRequest(urlString, function() {
 
