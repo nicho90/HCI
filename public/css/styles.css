@@ -17,7 +17,7 @@ body {
     text-align: center;
 }
 
-.middle td{
+.middle td, .middle th{
     text-align: center;
     width: 20%;
 }
