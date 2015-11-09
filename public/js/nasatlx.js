@@ -118,15 +118,22 @@ function buttonPart1()
             return false;
         }
     }
-    var urlString = createURL(results_rating);
+
+    console.log("api/nasatlx" + createURL(results_rating));
+
+    $.post( "api/nasatlx" + createURL(results_rating), function( data ) {
+        location.href='/results-nasatlx.html';
+    });
+
+    /*var urlString = ;
     executeRequest(urlString, function() {
-        location.href='result/nasatlx/myResult';
-    })
+
+    });*/
     return true;
 }
-function executeRequest(urlString, callback) {
+/*function executeRequest(urlString, callback) {
     var xhttp = new XMLHttpRequest();
     xhttp.open("POST", "/api/nasatlx"+urlString, false);
     xhttp.send();
     callback();
-}
+}*/

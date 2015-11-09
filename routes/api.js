@@ -36,22 +36,21 @@ router.get('/diaries', function(req,res,next) {
 
 // NASA-TLX
 router.post('/nasatlx', function(req, res, next) {
-  var userId = req.cookies.uniqid;
-  req.query.userId = userId;
-  if (req.query.mentalDemand != undefined &&
-        req.query.temporalDemand != undefined &&
-        req.query.performance != undefined &&
-        req.query.effort != undefined &&
-        req.query.frustration != undefined &&
-        req.query.physicalDemand != undefined ) {
-    nasatlx.createEntry(function(result){
-        console.log(result);
-        res.send(result);
-    },req.query);
-  }
-  else {
-    res.send({success: false, message: 'missing or false input'});
-  }
+    var userId = req.cookies.uniqid;
+    req.body.userId = userId;
+    if (req.body.mentalDemand != undefined &&
+        req.body.physicalDemand != undefined &&
+        req.body.temporalDemand != undefined &&
+        req.body.performance != undefined &&
+        req.body.effort != undefined &&
+        req.body.frustration != undefined ) {
+
+        nasatlx.createEntry(function(result){
+            res.redirect('/results-nasatlx.html');
+        },req.body);
+    } else {
+        res.send({success: false, message: 'missing or false input'});
+    }
 });
 
 router.get('/nasatlx', function(req,res,next) {

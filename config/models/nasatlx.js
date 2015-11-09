@@ -7,7 +7,7 @@ var mongoose = require('mongoose');
 var nasatlxSchema = mongoose.Schema({
     date  :  { type: Date, default: Date.now },
     userId: String,
-    metalDemand: Number,
+    mentalDemand: Number,
     physicalDemand: Number,
     temporalDemand: Number,
     performance: Number,

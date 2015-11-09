@@ -31,12 +31,12 @@ function Nasatlx() {
     this.getEntries = function(callback){
         NASATLX.find({},function(err, result){
             if (err) {
-                callback({success: false, message: 'error in finding document'})
+                callback({success: false, message: 'error in finding document'});
             }
             else {
-                callback({success: true, result: result})
+                callback(result);
             }
-        }).select('-__v -_id')
+        }).select('-__v -_id');
     }
 
     this.getEntryByID = function(callback, id) {
