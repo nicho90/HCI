@@ -129,7 +129,7 @@ function buttonPart1()
         frustration: results_rating[5]
     };
     console.log(_data);
-    $.ajax({
+    /*$.ajax({
         type: 'POST',
         url: 'api/nasatlx',
         data: _data,
@@ -138,17 +138,17 @@ function buttonPart1()
         },
         contentType: "application/json",
         dataType: 'json'
-    });
-
-    /*var urlString = ;
-    executeRequest(urlString, function() {
-
     });*/
+
+    executeRequest(createURL(results_rating), function() {
+        location.href='/results-nasatlx.html'
+    });
     return true;
 }
-/*function executeRequest(urlString, callback) {
+
+function executeRequest(urlString, callback) {
     var xhttp = new XMLHttpRequest();
-    xhttp.open("POST", "/api/nasatlx"+urlString, false);
+    xhttp.open("GET", "/api/nasatlxs"+urlString, false);
     xhttp.send();
     callback();
-}*/
+}
