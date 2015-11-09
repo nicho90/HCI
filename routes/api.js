@@ -106,7 +106,32 @@ router.post('/sus', function(req, res, next) {
 // SURVEY
 router.post('/survey', function(req, res, next) {
   var userId = req.cookies.uniqid;
+    console.log(req);
   req.body.userId = userId;
+    if(req.body.firstCB != undefined) {
+        req.body.firstCB = true;
+    }
+    else {
+        req.body.firstCB = false
+    }
+    if(req.body.secondCB != undefined) {
+        req.body.secondCB = true;
+    }
+    else {
+        req.body.secondCB = false
+    }
+    if(req.body.thirdCB != undefined) {
+        req.body.thirdCB = true;
+    }
+    else {
+        req.body.thirdCB = false
+    }
+    if(req.body.fourthCB != undefined) {
+        req.body.fourthCB = true;
+    }
+    else {
+        req.body.fourthCB = false
+    }
   survey.createEntry(function(result){
     res.redirect('/result/survey/'+userId);
   },req.body);
